@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage[margin=1 in]{geometry}
+
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\newcommand{\khat}{\hat{\textbf{k}}}
+
+
+\begin{document}
+
+\begin{center}
+    \underline{Vector Algebra} \\
+    \vspace{0.2 cm}
+    \large \textbf{ASSESSMENT}
+\end{center}
+
+\vspace{0.5 cm}
+
+\large \noindent \textbf{I.} Write the vectors in component form to prove the following identities.
+
+\vspace{0.5 cm}
+
+{$\textbf{(a)}   (a \times b) \times c = (a \cdot c)b - (b \cdot c)a$} 
+
+\begin{gather*}
+    (a \times b) = (a_y b_z - a_z b_y)\ihat + (a_z b_x - a_x b_z)\jhat + (a_x b_y - a_y b_x)\khat \\
+    \textit{\color{gray}evaluate x-component of cross products} \\
+    [(a \times b) \times c]_x = c_z (a_z b_x - a_x b_z) - c_y(a_x b_y - a_y b_x) \\
+    \small \textit{\color{gray}factor  out  $b_x$ and $a_x$} \\
+    = b_x (c_z a_z + c_y a_y) - a_x(c_z b_z + c_y b_y) \\
+    \small \textit{\color{gray}add and subtract  $a_x b_x c_x$} \\
+    = b_x (c_z a_z + c_y a_y) - a_x(c_z b_z + c_y b_y) + a_x b_x c_x - a_x b_x c_x \\
+    = b_x (c_z a_z + c_y a_y + c_x a_x) - a_x(c_z b_z + c_y b_y + c_x a_x) \\
+    \small \textit{\color{gray}evaluate dot products} \\
+    c_z a_z + c_y a_y + c_x a_x = a \cdot c \\ 
+    c_z b_z + c_y b_y + c_x a_x = b \cdot c \\
+    [(a \times b) \times c]_x = b_x ( a \cdot c) - a_x (b \cdot c)\\
+    \small \textit{\color{gray}apply to other components} \\
+    [(a \times b) \times c]_y = b_y ( a \cdot c) - a_y (b \cdot c) \\
+    [(a \times b) \times c]_z = b_z ( a \cdot c) - a_z (b \cdot c) \\
+    \textbf{Thus:} \\
+    (a \times b) \times c = b_x + b_y + b_z [( a \cdot c)] - a_x + a_y + a_z[(b \cdot c)] \\
+    (a \times b) \times c = b( a \cdot c) - a(b \cdot c)
+\end{gather*}
+
+
+\newpage
+
+{$\textbf{(b)}   (a \times b) \cdot (c \times d) = (a \cdot c)(b \cdot d) - (a \cdot d)(b \cdot c)$} 
+
+\begin{gather*}
+    a \times b = (a_y b_z - a_z b_y)\ihat + (a_z b_x - a_x b_z)\jhat + (a_x b_y - a_y b_x)\khat \\
+    \small \textit{\color{gray} consider $c \times d$ a component of a scalar triple product}\\
+    \textit{let } c \times d = (c_y d_z - c_z d_y)\ihat + (c_z d_x - c_x d_z)\jhat + (c_x d_y - c_y d_x)\khat  = e\\
+    (a \times b) \cdot (c \times d) =  (a \times b) \cdot e \\
+    (a \times b) \cdot e = a \cdot (b \times e) = a \cdot (b \times (c \times d)) \\
+    \small \textit{\color{gray} expand the vector triple product}\\
+    b \times (c \times d) = (b \cdot d)c - (b \cdot c)d \\
+    a \cdot (b \times (c \times d)) = a \cdot ((b \cdot d)c - (b \cdot c)d) \\
+    \small \textit{\color{gray} the dot product is distributive:}\\
+    a \cdot ((b \cdot d)c - (b \cdot c)d) = (a \cdot c)(b \cdot d) - (a \cdot d)(b \cdot c) \\
+    \textbf{Thus:} \\
+    (a \times b) \cdot (c \times d) = (a \cdot c)(b \cdot d) - (a \cdot d)(b \cdot c)
+\end{gather*}
+
+
+\end{document}
